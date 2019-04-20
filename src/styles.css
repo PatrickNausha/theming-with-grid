@@ -1,0 +1,58 @@
+:root {
+  font-family: sans-serif;
+}
+
+.list-item {
+  display: grid;
+  grid-template: var(--list-item-grid-tempate-areas);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.date {
+  grid-area: date;
+}
+
+.title {
+  grid-area: var(--title-grid-area, title);
+  font-family: serif;
+  z-index: 1;
+  font-size: 36px;
+}
+
+.link {
+  grid-area: link;
+  text-align: right;
+}
+
+.description {
+  grid-area: description;
+}
+
+.thumbnail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: thumbnail;
+  font-size: calc(var(--thumbnail-height, 64px) - 10px);
+  background: linear-gradient(to bottom, #94c5f8 1%, #a6e6ff 70%, #b1b5ea 100%);
+  height: var(--thumbnail-height);
+}
+
+.theme1 .list-item {
+  --list-item-grid-tempate-areas: "thumbnail title link" "thumbnail date ."
+    ". description description";
+}
+
+.theme2 .list-item {
+  --list-item-grid-tempate-areas: "thumbnail thumbnail" "date link"
+    "description description";
+  --title-grid-area: thumbnail;
+  --thumbnail-height: 240px;
+}
+
+.theme3 .list-item {
+  --list-item-grid-tempate-areas: "thumbnail title title" "date date date"
+    "description description description" "link link link" / 36px 1fr 1fr;
+  --thumbnail-height: 36px;
+}
