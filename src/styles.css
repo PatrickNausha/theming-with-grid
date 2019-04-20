@@ -40,7 +40,7 @@
 }
 
 .theme1 .list-item {
-  --list-item-grid-tempate-areas: "thumbnail title link" "thumbnail date ."
+  --list-item-grid-tempate-areas: "thumbnail date link" "thumbnail title ."
     ". description description";
 }
 
